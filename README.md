@@ -1,5 +1,5 @@
 # my Git Commands
-My most used git commands for the operations that are not available through github desktop software
+My most used git commands for the operations that are not available through github desktop software (https://desktop.github.com/)
 ## Change text editor
 For squashing commits you need this. Replace your text editor at least with notepad)
 ##### For notepad
