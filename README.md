@@ -69,8 +69,8 @@ git merge other_Branch
 git push --force
 ```
 ## Remove last commit
-```
 use the id one before that
+```
 git reset --hard e78df3ad58a71eca510a76b716404841d6d4fe20
 git push --force
 ```
