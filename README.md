@@ -25,8 +25,9 @@ git push --delete origin branch_Name
 git branch -D branch_Name
 ```
 ## Copy current branch to a new branch 
+```
 git checkout -b new_Branch_Name
-
+```
 ## Squash commits (merge)
 use the commit ID of one commit before your first commit, 
 ```
