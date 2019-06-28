@@ -43,7 +43,6 @@ Write your comments below that (things after # are ignored)
 In the end:
 ```
 git push --force
-
 ```
 Alternative method with number (not much useful)
 ```
