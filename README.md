@@ -2,6 +2,22 @@
 My most used git commands for the operations that are not available through github desktop software (https://desktop.github.com/).
 For github desktop documentation refer to:
 https://help.github.com/en/desktop/getting-started-with-github-desktop
+
+# Best practice to use Gitub for me:
+This way you don't need to merge conflicts of pull requests and all that.
+
+* Check out to master
+``git checkout master``
+* Commit as many as you want using Github Desktop
+* Backup your master branch with its several commits 
+``git checkout backup``
+* Check out to master again
+``git checkout master``
+* squash commits.
+``git rebase --interactive 0ca4f4376f04eee6599a4b2e17255357fb888422`` then ``git push --force``
+
+
+
 ## Change text editor
 For squashing commits you need this. Replace your text editor at least with notepad)
 ##### For notepad
@@ -33,7 +49,7 @@ git checkout -b new_Branch_Name
 ## Squash commits (merge)
 use the commit ID of one commit before your first commit, 
 ```
-git rebase --interactive 5c63ce3029fd372fb63d07d77c74cfae1c377ab1
+git rebase --interactive 0ca4f4376f04eee6599a4b2e17255357fb888422
 ```
 When editor is opened, 
 replace pick which squash, 
