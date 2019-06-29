@@ -4,7 +4,7 @@ My most used git commands for the operations that are not available through gith
 For github desktop documentation refer to:
 https://help.github.com/en/desktop/getting-started-with-github-desktop
 
-# Best practice to use Gitub for me:
+# Best practice to use Github for me:
 This way you don't need to merge conflicts of pull requests and all that.
 
 * Check out to master
