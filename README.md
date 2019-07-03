@@ -15,7 +15,7 @@ This way you don't need to merge conflicts of pull requests and all that.
 * Check out to master again
 ``git checkout master``
 * squash commits.
-``git rebase --interactive 0ca4f4376f04eee6599a4b2e17255357fb888422`` then ``git push --force``
+``git rebase --interactive 963958977fe4af9bd961eea0130e68538385c98f`` then ``git push --force``
 
 
 
@@ -23,18 +23,26 @@ This way you don't need to merge conflicts of pull requests and all that.
 For squashing commits you need this. Replace your text editor at least with notepad)
 ##### For notepad
 ```
-git config core.editor notepad
+git config --global core.editor notepad
 ```
 
-##### For sublime or notepad++
+##### For notepad++
+x64
 ```
-git config --global core.editor \
-"'C:/Program Files/Sublime Text 3/sublime_text.exe' -multiInst -notabbar -nosession -noPlugin"
+git config --global core.editor "'C:/Program Files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
 ```
-or
+x86
 ```
-git config --global core.editor \
-"'C:/Program Files/Sublime Text 3/sublime_text.exe' -multiInst"
+git config --global core.editor "'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
+```
+##### For sublime
+x64
+```
+git config --global core.editor "'C:/Program Files/sublime text 3/subl.exe' -w"
+```
+x86
+```
+git config --global core.editor "'C:/Program Files (x86)/sublime text 3/subl.exe' -w"
 ```
 
 ## Delete a branch
