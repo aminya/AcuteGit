@@ -8,15 +8,30 @@ https://help.github.com/en/desktop/getting-started-with-github-desktop
 This way you don't need to merge conflicts of pull requests and all that.
 
 * Check out to master
-``git checkout master``
+
+	```
+	git checkout master
+	```
 * Commit as many as you want using Github Desktop
 * Backup your master branch with its several commits 
-``git checkout backup``
-* Check out to master again
-``git checkout master``
-* squash commits.
-``git rebase --interactive 963958977fe4af9bd961eea0130e68538385c98f`` then ``git push --force``
 
+	```
+	git checkout backup
+	```
+* Check out to master again
+
+	```
+	git checkout master
+	```
+* squash commits.
+
+	```
+	git rebase --interactive 6c36bcb04f22ad5fda24923bb58eac78ad1f0914
+	```
+	then 
+	```
+	git push --force
+	```
 
 
 ## Change text editor
