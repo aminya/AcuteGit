@@ -97,7 +97,7 @@ git commit --amend -m "title" -m "
 Your comment here
 use enter for different lines
 
-		"
+"
 ```
 ```
 git push --force
