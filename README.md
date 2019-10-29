@@ -127,3 +127,9 @@ git branch -m new_name
 git push origin --delete old_name
 git push origin -u new_name
 ```
+
+## Rename a file:
+Open the git bash in the folder that file exits (hold shift and right click and select open bash here on Windows)
+```
+git mv old_filename new_filename
+```
