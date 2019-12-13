@@ -133,3 +133,10 @@ Open the git bash in the folder that file exits (hold shift and right click and 
 ```
 git mv old_filename new_filename
 ```
+
+## Fork Forced Sync 
+```
+git fetch upstream
+git reset --hard upstream/master
+git push -f
+```
