@@ -140,3 +140,10 @@ git fetch upstream
 git reset --hard upstream/master
 git push -f
 ```
+
+## Move commits between branches
+```
+git checkout newbranch
+git cherry-pick 87ea90d1~1..b4167564
+```
+Don't forget ~1
