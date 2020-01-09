@@ -146,4 +146,23 @@ git push -f
 git checkout newbranch
 git cherry-pick 87ea90d1~1..b4167564
 ```
+or
+```
+git cherry-pick d198f1d
+```
 Don't forget ~1
+
+
+## Edit a deep commit
+Save and stash your work so far, like before.
+Make the fix, and commit without amend mode: `git commit -a -m "Foo"`
+Look at git log and copy the first 5 or so characters from the ID of the one commit before the old commit onto your clipboard.
+Start the interactive rebase process, pasting in the characters from the ID: `git rebase --interactive ID`
+Your editor will come up with several lines like `pick d3adb33` Commit message, one line for each commit since the older one.
+For the most recent commit, change the word "pick" to "squash" at the start of the line. (This tells Git to combine it back into the one before it.)
+Use your editor to reorder the lines, putting the line for the most recent commit just after the older commit you want to fix.
+Save and quit your editor.
+The editor will come up again, this time asking you for the commit message for the combined commit. Delete or comment out the newer, temp message ("Foo").
+Save and quit your editor.
+Git does its magic, squashing those two commits together, and recreating all the commits since then.
+Re-apply the stash and continue happily with your life
