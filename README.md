@@ -1,5 +1,5 @@
 # My Git Commands
-My most used git commands for the operations that are not available through github desktop software (https://desktop.github.com/).
+My most used git commands for the operations that are not available through GitHub desktop software (https://desktop.github.com/) and [Tortoise git](https://tortoisegit.org/download/)
 
 For github desktop documentation refer to:
 https://help.github.com/en/desktop/getting-started-with-github-desktop
@@ -166,3 +166,15 @@ The editor will come up again, this time asking you for the commit message for t
 Save and quit your editor.
 Git does its magic, squashing those two commits together, and recreating all the commits since then.
 Re-apply the stash and continue happily with your life
+## Sub-modules
+
+### Add a submodule to a repository
+
+Right-Click, Add Sub-module, then:
+![](images/add.jpg)
+
+
+or using git commands
+```
+git submodule add git@github.com:url_to/awesome_submodule.git path_to_awesome_submodule
+```
