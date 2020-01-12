@@ -178,7 +178,7 @@ Right-Click, Add Sub-module, then:
 
 or using git commands
 ```
-git submodule add git@github.com:url_to/awesome_submodule.git path_to_awesome_submodule
+git submodule add git@github.com:url_to/awesome_submodule.git path_to_submodule
 ```
 
 ### Download (Initialize) the submodule:
