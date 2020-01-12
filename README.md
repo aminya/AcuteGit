@@ -13,7 +13,7 @@ This way you don't need to merge conflicts of pull requests and all that.
 	git checkout master
 	```
 * Commit as many as you want using Github Desktop
-* Backup your master branch with its several commits 
+* Backup your master branch with its several commits
 
 	```
 	git checkout backup
@@ -28,7 +28,7 @@ This way you don't need to merge conflicts of pull requests and all that.
 	```
 	git rebase --interactive 6c36bcb04f22ad5fda24923bb58eac78ad1f0914
 	```
-	then 
+	then
 	```
 	git push --force
 	```
@@ -66,21 +66,21 @@ git checkout master
 git push --delete origin branch_Name
 git branch -D branch_Name
 ```
-## Copy current branch to a new branch 
+## Copy current branch to a new branch
 ```
 git checkout -b new_Branch_Name
 ```
 ## Squash commits (merge)
-use the commit ID of one commit before your first commit, 
+use the commit ID of one commit before your first commit,
 ```
 git rebase --interactive 0ca4f4376f04eee6599a4b2e17255357fb888422
 ```
-When editor is opened, 
-replace pick which squash, 
+When editor is opened,
+replace pick which squash,
 make the first squash pick again. (All other commits will be merged to this one)
-Save and close the first editor, 
-the second editor will be opened for editing comments. 
-Use the first line and some enters after that as the title. 
+Save and close the first editor,
+the second editor will be opened for editing comments.
+Use the first line and some enters after that as the title.
 Write your comments below that (things after # are ignored)
 In the end:
 ```
@@ -134,7 +134,7 @@ Open the git bash in the folder that file exits (hold shift and right click and 
 git mv old_filename new_filename
 ```
 
-## Fork Forced Sync 
+## Fork Forced Sync
 ```
 git fetch upstream
 git reset --hard upstream/master
@@ -166,6 +166,8 @@ The editor will come up again, this time asking you for the commit message for t
 Save and quit your editor.
 Git does its magic, squashing those two commits together, and recreating all the commits since then.
 Re-apply the stash and continue happily with your life
+
+
 ## Sub-modules
 
 ### Add a submodule to a repository
@@ -188,3 +190,12 @@ or using git commands:
 git submodule update --init --recursive
 ```
 
+### Update the submodule (if that repository changes):
+
+Right-Click, Update Sub-module, then:
+![](images/update-submodue.jpg)
+
+or using git commands:
+```
+git submodule update --remote --merge
+```
