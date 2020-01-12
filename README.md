@@ -178,3 +178,13 @@ or using git commands
 ```
 git submodule add git@github.com:url_to/awesome_submodule.git path_to_awesome_submodule
 ```
+
+### Download (Initialize) the submodule:
+Right-Click, Update Sub-module, then:
+![](images/init.jpg)
+
+or using git commands:
+```
+git submodule update --init --recursive
+```
+
