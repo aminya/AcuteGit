@@ -200,3 +200,22 @@ or using git commands:
 ```
 git submodule update --remote --merge
 ```
+
+### Remove trailing whitespace
+Git solution:
+```git
+git grep -I --name-only -z -e '' | xargs -0 sed -i 's/[ \t]\+\(\r\?\)$/\1/'
+```
+
+Generic solution:
+```ps
+while IFS= read -r -d '' -u 9
+do
+    if [[ "$(file -bs --mime-type -- "$REPLY")" = text/* ]]
+    then
+        sed -i 's/[ \t]\+\(\r\?\)$/\1/' -- "$REPLY"
+    else
+        echo "Skipping $REPLY" >&2
+    fi
+done 9< <(find . -type f -print0)
+```
