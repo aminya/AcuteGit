@@ -9,27 +9,27 @@ This way you don't need to merge conflicts of pull requests and all that.
 
 * Check out to master
 
-	```
+	```git
 	git checkout master
 	```
 * Commit as many as you want using Github Desktop
 * Backup your master branch with its several commits
 
-	```
+	```git
 	git checkout backup
 	```
 * Check out to master again
 
-	```
+	```git
 	git checkout master
 	```
 * squash commits.
 
-	```
+	```git
 	git rebase --interactive 6c36bcb04f22ad5fda24923bb58eac78ad1f0914
 	```
 	then
-	```
+	```git
 	git push --force
 	```
 
@@ -43,36 +43,36 @@ git config --global core.editor notepad
 
 ##### For notepad++
 x64
-```
+```git
 git config --global core.editor "'C:/Program Files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
 ```
 x86
-```
+```git
 git config --global core.editor "'C:/Program Files (x86)/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
 ```
 ##### For sublime
 x64
-```
+```git
 git config --global core.editor "'C:/Program Files/sublime text 3/subl.exe' -w"
 ```
 x86
-```
+```git
 git config --global core.editor "'C:/Program Files (x86)/sublime text 3/subl.exe' -w"
 ```
 
 ## Delete a branch
-```
+```git
 git checkout master
 git push --delete origin branch_Name
 git branch -D branch_Name
 ```
 ## Copy current branch to a new branch
-```
+```git
 git checkout -b new_Branch_Name
 ```
 ## Squash commits (merge)
 use the commit ID of one commit before your first commit,
-```
+```git
 git rebase --interactive 0ca4f4376f04eee6599a4b2e17255357fb888422
 ```
 When editor is opened,
@@ -83,15 +83,15 @@ the second editor will be opened for editing comments.
 Use the first line and some enters after that as the title.
 Write your comments below that (things after # are ignored)
 In the end:
-```
+```git
 git push --force
 ```
 Alternative method with number (not much useful)
-```
+```git
 git rebase --interactive HEAD~[53]
 ```
 ## Reword last commit's comment
-```
+```git
 git commit --amend -m "title" -m "
 
 Your comment here
@@ -99,23 +99,23 @@ use enter for different lines
 
 "
 ```
-```
+```git
 git push --force
 ```
 ## Merge branch to master
-```
+```git
 git checkout master
 git merge other_Branch
 git push --force
 ```
 ## Remove last commit
 use the id one before that
-```
+```git
 git reset --hard e78df3ad58a71eca510a76b716404841d6d4fe20
 git push --force
 ```
 or
-```
+```git
 git reset --hard HEAD^
 git push origin -f
 ```
@@ -130,24 +130,24 @@ git push origin -u new_name
 
 ## Rename a file:
 Open the git bash in the folder that file exits (hold shift and right click and select open bash here on Windows)
-```
+```git
 git mv old_filename new_filename
 ```
 
 ## Fork Forced Sync
-```
+```git
 git fetch upstream
 git reset --hard upstream/master
 git push -f
 ```
 
 ## Move commits between branches
-```
+```git
 git checkout newbranch
 git cherry-pick 87ea90d1~1..b4167564
 ```
 or
-```
+```git
 git cherry-pick d198f1d
 ```
 Don't forget `~1`
@@ -187,7 +187,7 @@ Right-Click, Update Sub-module, then:
 ![](images/init.jpg)
 
 or using git commands:
-```
+```git
 git submodule update --init --recursive
 ```
 
@@ -197,7 +197,7 @@ Right-Click, Update Sub-module, then:
 ![](images/update-submodue.jpg)
 
 or using git commands:
-```
+```git
 git submodule update --remote --merge
 ```
 
