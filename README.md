@@ -219,3 +219,8 @@ do
     fi
 done 9< <(find . -type f -print0)
 ```
+
+### Clone a branch
+```
+git clone --single-branch --branch branchName repoMainURL
+```
