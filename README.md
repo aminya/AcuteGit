@@ -144,7 +144,8 @@ git push -f
 ## Move commits between branches
 ```git
 git checkout newbranch
-git cherry-pick 87ea90d1~1..b4167564
+git cherry-pick 87ea90d1~1..b4167564   # or: git cherry-pick <sha_of_one_commit_before>..<sha_of_last_commit>
+```
 ```
 or
 ```git
