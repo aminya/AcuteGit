@@ -202,6 +202,29 @@ or using git commands:
 git submodule update --remote --merge
 ```
 
+
+### Delete a submodule
+```
+git rm the_submodule_path
+```
+
+Delete .git/modules/the_submodule_path (using a command or manually)
+bash:
+```
+rm -rf .git/modules/the_submodule_path
+```
+pwsh:
+```
+rm -r -force .git/modules/the_submodule
+```
+
+
+For example, if we have libgit2 in deps/libgit2:
+```
+git rm deps/libgit2
+rm -r -force .git/modules/libgit2
+```
+
 ### Remove trailing whitespace
 Git solution:
 ```git
