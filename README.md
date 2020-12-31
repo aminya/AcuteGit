@@ -156,7 +156,7 @@ Don't forget `~1`
 ## Edit a deep commit
 - Save and stash your work so far, like before and commit what you have without amend mode: `git commit -a -m "Foo"`
 - From git log copy commit ID (SHA) of the one commit before the old commit onto your clipboard.
-- Start the interactive rebase process, pasting in the characters from the ID: 
+- Start the interactive rebase process, pasting in the characters from the ID:
 ```
 git rebase --interactive ID
 ```
@@ -173,15 +173,24 @@ git push --force
 ## Sub-modules
 
 ### Add a submodule to a repository
+Create a .gitmodule in the repo
 
-Right-Click, Add Sub-module, then:
-![](images/add.jpg)
-
-
-or using git commands
+then use this git command
 ```
 git submodule add git@github.com:url_to/awesome_submodule.git path_to_submodule
 ```
+
+Using git tortoise: Right-Click, Add Sub-module, then:
+![](images/add.jpg)
+
+
+### Add a submodule to a repository that follows a branch
+Create a .gitmodule in the repo, then:
+```
+git submodule add -b branch_name URL_to_Git_repo optional_directory_rename
+git submodule update --remote
+```
+
 
 ### Download (Initialize) the submodule:
 Right-Click, Update Sub-module, then:
