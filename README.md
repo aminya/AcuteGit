@@ -268,3 +268,27 @@ git branch --merged | ?{-not ($_ -like "*master")} | %{git branch -d $_.trim()}
 ```
 git remote prune origin && git repack && git prune-packed && git reflog expire --expire=1.month.ago && git gc --aggressive
 ```
+
+
+### Rewrite history to delete files
+:warning: Have a backup!
+
+PowerShell
+```ps1
+$paths = "path1", "path2", "path3"
+
+foreach ($path in $paths) {
+   git filter-repo --invert-paths --path $path
+   if (test-path $path) {
+      rm $path -Recurse -Force
+   }
+   git reflog expire --expire=now --all && git gc --prune=now --aggressive
+}
+```
+
+Push the changes:
+```
+git remote add origin git@github.com:YourUserName/YourRepoName.git
+git push --set-upstream origin master -f
+git push --force --all origin
+```
