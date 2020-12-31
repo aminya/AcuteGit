@@ -232,7 +232,7 @@ git grep -I --name-only -z -e '' | xargs -0 sed -i 's/[ \t]\+\(\r\?\)$/\1/'
 ```
 
 Generic solution:
-```ps
+```sh
 while IFS= read -r -d '' -u 9
 do
     if [[ "$(file -bs --mime-type -- "$REPLY")" = text/* ]]
@@ -247,4 +247,15 @@ done 9< <(find . -type f -print0)
 ### Clone a branch
 ```
 git clone --single-branch --branch branchName repoMainURL
+```
+
+### Delete merged branches locally
+```
+git branch --merged | ?{-not ($_ -like "*master")} | %{git branch -d $_.trim()}
+```
+
+### Clean a git repo from the old things/garbage/etc
+:warning: Have a backup!
+```
+git remote prune origin && git repack && git prune-packed && git reflog expire --expire=1.month.ago && git gc --aggressive
 ```
