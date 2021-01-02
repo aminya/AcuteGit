@@ -264,18 +264,28 @@ git branch --merged | ?{-not ($_ -like "*master")} | %{git branch -d $_.trim()}
 ```
 
 ### Clean a git repo from the old things/garbage/etc
-:warning: Add `--dry-run` to preview
+:warning: Add `--dry-run` to preview and have a backup!
 
 clean untracked files: 	`git clean -f`
 remove untracked directories: `git clean -f -d`
 remove ignored files: `git clean -f -X`
 remove ignored as well as non-ignored files `git clean -f -x`
 
-:warning: Have a backup!
 ```
 git remote prune origin && git repack && git prune-packed && git reflog expire --expire=1.month.ago && git gc --aggressive
 ```
 
+### Remove merged branches locally:
+```ps1
+function git-rm-merged
+{
+  git branch --merged |
+    ForEach-Object { $_.Trim() } |
+    Where-Object {$_ -NotMatch "^\*"} |
+    Where-Object {-not ( $_ -Like "*master" )} |
+    ForEach-Object { git branch -d $_ }
+}
+```
 
 ### Rewrite history to delete files
 :warning: Have a backup!
