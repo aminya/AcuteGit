@@ -309,3 +309,9 @@ git remote add origin git@github.com:YourUserName/YourRepoName.git
 git push --set-upstream origin master -f
 git push --force --all origin
 ```
+
+### Change upstream url
+```
+git rm upstream
+git add upstream new_url
+```
