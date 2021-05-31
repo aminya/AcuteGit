@@ -249,19 +249,22 @@ done 9< <(find . -type f -print0)
 git clone --single-branch --branch branchName repoMainURL
 ```
 
-### Delete merged branches locally
+### Clone a subset of the branch
+
+Use this command to clone a huge repository. The depth indicates the recent commits you need.
+
 ```
-git branch --merged | ?{-not ($_ -like "*master")} | %{git branch -d $_.trim()}
+git clone --depth 2 --single-branch --branch branchName repoMainURL
 ```
 
 ### Clean a git repo from the untracked files
 
 :warning: Add `--dry-run` to preview and have a backup!
 
-clean untracked files: 	`git clean -f`
-remove untracked directories: `git clean -f -d`
-remove ignored files: `git clean -f -X`
-remove ignored as well as non-ignored files `git clean -f -x`
+- clean untracked files: 	`git clean -f`
+- remove untracked directories: `git clean -f -d`
+- remove ignored files: `git clean -f -X`
+- remove ignored as well as non-ignored files `git clean -f -x`
 
 ### Clean a git repo from the old things/garbage/etc
 
