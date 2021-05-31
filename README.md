@@ -263,7 +263,8 @@ git clone --single-branch --branch branchName repoMainURL
 git branch --merged | ?{-not ($_ -like "*master")} | %{git branch -d $_.trim()}
 ```
 
-### Clean a git repo from the old things/garbage/etc
+### Clean a git repo from the untracked files
+
 :warning: Add `--dry-run` to preview and have a backup!
 
 clean untracked files: 	`git clean -f`
@@ -271,8 +272,18 @@ remove untracked directories: `git clean -f -d`
 remove ignored files: `git clean -f -X`
 remove ignored as well as non-ignored files `git clean -f -x`
 
+### Clean a git repo from the old things/garbage/etc
+
+:warning: have a backup!
+
 ```
-git remote prune origin && git repack && git prune-packed && git reflog expire --expire=1.month.ago && git gc --aggressive
+git remote prune origin
+git repack
+git prune-packed
+git reflog expire --expire="1 hour" --all
+git reflog expire --expire-unreachable="1 hour" --all
+git prune --expire="1 hour" -v
+git gc --aggressive --prune="1 hour
 ```
 
 ### Remove merged branches locally:
