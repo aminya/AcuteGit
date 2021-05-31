@@ -1,5 +1,5 @@
 # My Git Commands
-My most used git commands for the operations that are not available through GitHub desktop software (https://desktop.github.com/) and [Tortoise git](https://tortoisegit.org/download/)
+My most used git commands for the operations that are not available through GitHub desktop software (https://desktop.github.com/) and [Atom GitHub](https://github.com/atom/github)
 
 For github desktop documentation refer to:
 https://help.github.com/en/desktop/getting-started-with-github-desktop
@@ -180,10 +180,6 @@ then use this git command
 git submodule add git@github.com:url_to/awesome_submodule.git path_to_submodule
 ```
 
-Using git tortoise: Right-Click, Add Sub-module, then:
-![](images/add.jpg)
-
-
 ### Add a submodule to a repository that follows a branch
 Create a .gitmodule in the repo, then:
 ```
@@ -193,20 +189,15 @@ git submodule update --remote
 
 
 ### Download (Initialize) the submodule:
-Right-Click, Update Sub-module, then:
-![](images/init.jpg)
 
-or using git commands:
+using git commands:
 ```git
 git submodule update --init --recursive
 ```
 
 ### Update the submodule (if that repository changes):
 
-Right-Click, Update Sub-module, then:
-![](images/update-submodue.jpg)
-
-or using git commands:
+using git commands:
 ```git
 git submodule update --remote --merge
 ```
